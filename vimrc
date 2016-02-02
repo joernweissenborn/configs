@@ -70,6 +70,17 @@ let g:auto_save = 1
 
 " intend_guides
 
+if has("gui_running")
+  if has("gui_gtk2")
+    set guifont=Inconsolata\ 12
+  elseif has("gui_macvim")
+    set guifont=Menlo\ Regular:h14
+  elseif has("gui_win32")
+    set guifont=Hack:h9:cANSI
+  endif
+endif
+
+
 let g:indent_guides_enable_on_vim_startup = 1
 
 au FileType dart set expandtab
