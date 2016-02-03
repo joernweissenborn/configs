@@ -24,9 +24,11 @@ Plugin 'vim-scripts/vim-auto-save'
 
 Plugin 'dart-lang/dart-vim-plugin'
 
+Plugin 'vim-scripts/indentpython.vim'
+
 Plugin 'jiangmiao/auto-pairs'
 
-"Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 Plugin 'bling/vim-airline'                      " Nicer statusline
 
@@ -35,6 +37,8 @@ Plugin 'ntpeters/vim-better-whitespace'         " better whitespace managent
 Plugin 'tpope/vim-sensible'                     " Sensible defaults
 
 Plugin 'nathanaelkane/vim-indent-guides'
+
+Plugin 'nvie/vim-flake8'
 
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
@@ -55,6 +59,7 @@ set t_vb=
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
+nnoremap <C-b> gd<CR>
 
 nmap <C-d> yyp 
 
@@ -191,3 +196,17 @@ let g:go_highlight_build_constraints = 1
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
 
+" python
+
+" PEP 8
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+
+let python_highlight_all=1
+syntax on
