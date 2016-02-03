@@ -135,6 +135,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'"
 " Nerdtree
 nmap <F7> :NERDTreeToggle<CR>
 
+let NERDTreeShowHidden=1
 
 " How can I open a NERDTree automatically when vim starts up if no files were
 " specified?
