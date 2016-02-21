@@ -7,7 +7,7 @@ if has('unix')
 	set rtp+=~/.vim/bundle/Vundle.vim
 	call vundle#begin()
 
-elseif has('win32') 
+elseif has('win32')
 
 	set rtp+=$HOME/vimfiles/bundle/Vundle.vim
 	call vundle#begin('$USERPROFILE/vimfiles/bundle/')
@@ -60,18 +60,19 @@ set mouse=a
 colorscheme molokai
 let mapleader = ","
 
-set visualbell 
+set visualbell
 set t_vb=
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
+nnoremap <F6> :SyntasticToggleMode<CR>
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-b> gd<CR>
 
-nmap <C-d> yyp 
+nmap <C-d> yyp
 
 " enable AutoSave on Vim startup
-let g:auto_save = 1  
+let g:auto_save = 1
 
 " intend_guides
 
@@ -99,7 +100,7 @@ au FileType yaml set shiftwidth=2
 
 nmap <F8> :TagbarToggle<CR>
 
-let g:tagbar_type_go = {  
+let g:tagbar_type_go = {
     \ 'ctagstype' : 'go',
     \ 'kinds'     : [
         \ 'p:package',
@@ -153,7 +154,7 @@ let g:acp_enableAtStartup = 0
 
 
 let g:neocomlete#enable_at_startup = 1
-autocmd VimEnter * NeoCompleteEnable " Enable NeoComplete at startup           
+autocmd VimEnter * NeoCompleteEnable " Enable NeoComplete at startup
 
 " Use smartcase.
 let g:neocomplete#enable_smart_case = 1
