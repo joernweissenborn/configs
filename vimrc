@@ -47,6 +47,8 @@ Plugin 'nathanaelkane/vim-indent-guides'
 
 Plugin 'nvie/vim-flake8'
 
+Plugin 'mrtazz/DoxygenToolkit.vim'
+
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
 Plugin 'airblade/vim-gitgutter'                 " Shows nice +/- for git chagnes in left pne
