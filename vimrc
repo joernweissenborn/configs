@@ -12,8 +12,8 @@ elseif has('win32')
 	set rtp+=$HOME/vimfiles/bundle/Vundle.vim
 	call vundle#begin('$USERPROFILE/vimfiles/bundle/')
 
-
 endif
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -49,9 +49,26 @@ Plugin 'nvie/vim-flake8'
 
 Plugin 'mrtazz/DoxygenToolkit.vim'
 
+Plugin 'vim-scripts/SearchComplete'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'ctrlpvim/ctrlp.vim'
+
+Plugin 'terryma/vim-multiple-cursors'
+
+Plugin 'flazz/vim-colorschemes'
+
+
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
 Plugin 'airblade/vim-gitgutter'                 " Shows nice +/- for git chagnes in left pne
+
+" Snippets
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'honza/vim-snippets'
+
 
 call vundle#end()            " required
 
@@ -72,9 +89,8 @@ nnoremap <S-Tab> :bprevious<CR>
 nnoremap <C-b> gd<CR>
 
 nmap <C-d> yyp
-
-" enable AutoSave on Vim startup
-let g:auto_save = 1
+imap <C-d> <ESC>yypi
+nmap <C-a> ggVG
 
 " intend_guides
 
@@ -90,6 +106,30 @@ endif
 
 
 let g:indent_guides_enable_on_vim_startup = 1
+
+" CtrlP
+"
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+
+" NerdCommenter
+
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
+let g:NERDDefaultAlign = 'left'
+
+map <C-\> ,c<Space>
+map <S-\> ,cs
+
+" Dartlang
 
 au FileType dart set expandtab
 au FileType dart set tabstop=2
@@ -171,9 +211,9 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 " <CR>: close popup and save indent.
 inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
 function! s:my_cr_function()
-  return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+  "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  "return pumvisible() ? "\<C-y>" : "\<CR>"
+  return pumvisible() ? "\<C-y>" : "\<CR>"
 endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
@@ -181,6 +221,32 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" autowrite
+"
+let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
+
+" enable AutoSave on Vim startup
+let g:auto_save = 1
+
+
+"Neosnippets
+"
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+" Enable snipMate compatibility feature.
+let g:neosnippet#enable_snipmate_compatibility = 1
+
+" Tell Neosnippet about the other snippets
+let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+
 " syntastic
 
 set statusline+=%#warningmsg#
@@ -198,6 +264,7 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 " better whitespace
 
 map <C-w> :StripWhitespace<CR>
+
 " golang
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
