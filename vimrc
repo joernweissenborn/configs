@@ -271,7 +271,7 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <leader>c <Plug>(go-coverage)
 
-au FileType go map <C-n> :lne<CR>
+"au FileType go map <C-n> :lne<CR>
 au FileType go map <C-m> :lp<CR>
 au FileType go map <C-f> :GoFmt<CR>
 au FileType go nmap <Leader>e <Plug>(go-rename)
@@ -284,6 +284,7 @@ let g:go_highlight_build_constraints = 1
 
 let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
+let g:go_list_type = "quickfix"
 
 " python
 
