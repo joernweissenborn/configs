@@ -59,6 +59,8 @@ Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'dhruvasagar/vim-buffer-history'
+
 
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
@@ -84,13 +86,35 @@ set t_vb=
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> :SyntasticToggleMode<CR>
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprevious<CR>
+nnoremap <Tab> :BufferHistoryBack<CR>
+nnoremap <S-Tab> :BufferHistoryForward<CR>
 nnoremap <C-b> gd<CR>
 
+nnoremap <leader>y viwy
+nnoremap <leader>vp viw"_dP"
+
+" double line
 nmap <C-d> yyp
+vmap <C-d> ykp
 imap <C-d> <ESC>yypi
+
+" select all
+
 nmap <C-a> ggVG
+
+" delete without yanking
+nnoremap <leader>d "_d
+vnoremap <leader>d "_d
+
+" move line up and down
+
+nnoremap <S-Up> ddkkp
+nnoremap <S-Down> ddp
+
+" replace currently selected text with default register
+" without yanking it
+
+vnoremap <leader>p "_dP"
 
 " intend_guides
 
@@ -263,7 +287,9 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 
 " better whitespace
 
-map <C-w> :StripWhitespace<CR>
+"map <C-w> :StripWhitespace<CR>
+map <leader>w :StripWhitespace<CR>
+
 
 " golang
 au FileType go nmap <leader>r <Plug>(go-run)
