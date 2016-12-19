@@ -52,7 +52,8 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 export GOPATH=/home/$USER/programming/golang/
 
-export PATH="$PATH:/home/joern/programming/golang/bin"
+export PATH="$PATH:/opt/golang/bin"
+export PATH="$PATH:/usr/local/go/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
