@@ -19,6 +19,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 Plugin 'scrooloose/nerdcommenter'
 
 Plugin 'fatih/vim-go'
@@ -69,6 +71,7 @@ Plugin 'Shougo/neosnippet'
 Plugin 'Shougo/neosnippet-snippets'
 Plugin 'honza/vim-snippets'
 
+Plugin 'jplaut/vim-arduino-ino'
 
 call vundle#end()            " required
 
