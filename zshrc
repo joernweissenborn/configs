@@ -62,7 +62,9 @@ export PATH="$PATH:/opt/dartlang/bin"
 source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 
+# tmux
 
+export TMUXP_CONFIGDIR=$HOME/config/tmuxp
 
 # # Preferred editor for local and remote sessions
 export EDITOR='vim'
