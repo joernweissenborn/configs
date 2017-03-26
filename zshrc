@@ -54,6 +54,7 @@ export GOPATH=/home/$USER/programming/golang/
 
 export PATH="$PATH:/opt/golang/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:${GOPATH}bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 
