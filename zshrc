@@ -48,12 +48,16 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(git chucknorris dnf fancy-ctrl-z thefuck vi-mode history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
+eval $(thefuck --alias)
 
 # User configuration
 export GOPATH=/home/$USER/programming/golang/
 
 export PATH="$PATH:/opt/golang/bin"
+export PATH="$PATH:/home/$USER/programming/golang/bin"
 export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:/opt/dartlang/bin"
+source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 
 

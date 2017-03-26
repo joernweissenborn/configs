@@ -75,6 +75,8 @@ Plugin 'honza/vim-snippets'
 
 Plugin 'jplaut/vim-arduino-ino'
 
+Plugin 'rust-lang/rust.vim'
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
