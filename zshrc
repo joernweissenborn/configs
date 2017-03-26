@@ -64,7 +64,8 @@ source $HOME/.cargo/env
 
 # tmux
 
-export TMUXP_CONFIGDIR=$HOME/config/tmuxp
+export TMUXP_CONFIGDIR=$HOME/configs/tmuxp
+export DISABLE_AUTO_TITLE='true'
 
 # # Preferred editor for local and remote sessions
 export EDITOR='vim'
@@ -75,4 +76,3 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
  export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source ./localzsh
