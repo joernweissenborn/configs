@@ -37,7 +37,7 @@ COMPLETION_WAITING_DOTS="true"
 # much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
-# Uncomment following line if you want to  shown in the command execution time stamp 
+# Uncomment following line if you want to  shown in the command execution time stamp
 # in the history command output. The optional three formats: "mm/dd/yyyy"|"dd.mm.yyyy"|
 # yyyy-mm-dd
 # HIST_STAMPS="mm/dd/yyyy"
@@ -45,18 +45,20 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git chucknorris dnf fancy-ctrl-z thefuck vi-mode history-substring-search)
+plugins=(git chucknorris dnf fancy-ctrl-z thefuck history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 # User configuration
 export GOPATH=/home/$USER/programming/golang/
+export PATH="$PATH:${GOPATH}bin"
+export PATH="$PATH:/home/$USER/programming/golang/bin"
 
 export PATH="$PATH:/opt/golang/bin"
-export PATH="$PATH:/home/$USER/programming/golang/bin"
-export PATH="$PATH:/usr/local/go/bin"
+
 export PATH="$PATH:/opt/dartlang/bin"
+
 source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 

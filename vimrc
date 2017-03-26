@@ -1,4 +1,5 @@
 set nocompatible              " be iMproved, required
+set noswapfile
 
 filetype off                  " required
 
@@ -63,6 +64,7 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'dhruvasagar/vim-buffer-history'
 
+Plugin 'petRUShka/vim-opencl'
 
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
@@ -85,6 +87,7 @@ set number
 set mouse=a
 colorscheme molokai
 let mapleader = ","
+set lazyredraw
 
 set visualbell
 set t_vb=
