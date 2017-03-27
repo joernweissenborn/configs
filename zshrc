@@ -47,6 +47,8 @@ COMPLETION_WAITING_DOTS="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git chucknorris dnf fancy-ctrl-z thefuck history-substring-search)
 
+alias wttr="curl wttr.in"
+
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
