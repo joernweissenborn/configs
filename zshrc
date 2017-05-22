@@ -69,6 +69,10 @@ source $HOME/.cargo/env
 export TMUXP_CONFIGDIR=$HOME/configs/tmuxp
 export DISABLE_AUTO_TITLE='true'
 
+# ssh key unlock
+
+alias unlockmykeys='eval "$(ssh-agent)" && ssh-add'
+
 # # Preferred editor for local and remote sessions
 export EDITOR='vim'
 

@@ -15,6 +15,10 @@ elseif has('win32')
 
 endif
 
+" Colors for Putty
+
+
+
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -34,8 +38,6 @@ Plugin 'vim-scripts/vim-auto-save'
 
 Plugin 'dart-lang/dart-vim-plugin'
 
-Plugin 'vim-scripts/indentpython.vim'
-
 Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'scrooloose/syntastic'
@@ -47,8 +49,6 @@ Plugin 'ntpeters/vim-better-whitespace'         " better whitespace managent
 Plugin 'tpope/vim-sensible'                     " Sensible defaults
 
 Plugin 'nathanaelkane/vim-indent-guides'
-
-Plugin 'nvie/vim-flake8'
 
 Plugin 'mrtazz/DoxygenToolkit.vim'
 
@@ -65,6 +65,12 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'dhruvasagar/vim-buffer-history'
 
 Plugin 'petRUShka/vim-opencl'
+
+" Python
+
+Plugin 'vim-scripts/indentpython.vim'
+
+Plugin 'nvie/vim-flake8'
 
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
@@ -100,25 +106,26 @@ if &term =~ "xterm"
   endif
 endif
 
+" UI
+
 set number
 set mouse=a
 colorscheme molokai
 let mapleader = ","
 set lazyredraw
-
+set cursorline
+set filetype indent on
+set wildmenu
 set visualbell
-set t_vb=
+
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
 nnoremap <F6> :SyntasticToggleMode<CR>
+
 nnoremap <Tab> :BufferHistoryBack<CR>
 nnoremap <S-Tab> :BufferHistoryForward<CR>
-nnoremap <C-b> gd<CR>
 
-nnoremap <leader>y viwy
-nnoremap <leader>vp viw"_dP"
-
-" double line
+" double line or block
 nmap <C-d> yyp
 vmap <C-d> ykp
 imap <C-d> <ESC>yypi
@@ -140,8 +147,9 @@ nnoremap <S-Down> ddp
 " without yanking it
 
 vnoremap <leader>p "_dP"
+nnoremap <leader>vp viw"_dP"
 
-" intend_guides
+" settings for gvim
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -153,7 +161,6 @@ if has("gui_running")
   endif
 endif
 
-
 let g:indent_guides_enable_on_vim_startup = 1
 
 " CtrlP
@@ -162,14 +169,11 @@ let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
 " NerdCommenter
-
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
-
 " Allow commenting and inverting empty lines (useful when commenting a region)
 let g:NERDCommentEmptyLines = 1
-
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
