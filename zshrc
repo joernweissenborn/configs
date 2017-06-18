@@ -53,11 +53,15 @@ source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 # User configuration
+
+# Golang
 export GOPATH=/home/$USER/programming/golang/
 export PATH="$PATH:${GOPATH}bin"
 export PATH="$PATH:/home/$USER/programming/golang/bin"
-
 export PATH="$PATH:/usr/local/go/bin"
+
+# Dart
+>>>>>>> 1b4c5635e2913ffdbf6e40618fcb374a6815f295
 
 export PATH="$PATH:/opt/dartlang/bin"
 
@@ -68,6 +72,7 @@ source $HOME/.cargo/env
 
 export TMUXP_CONFIGDIR=$HOME/configs/tmuxp
 export DISABLE_AUTO_TITLE='true'
+alias ta='tmux a -t'
 
 # ssh key unlock
 
