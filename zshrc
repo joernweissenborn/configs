@@ -61,7 +61,6 @@ export PATH="$PATH:/home/$USER/programming/golang/bin"
 export PATH="$PATH:/usr/local/go/bin"
 
 # Dart
->>>>>>> 1b4c5635e2913ffdbf6e40618fcb374a6815f295
 
 export PATH="$PATH:/opt/dartlang/bin"
 
