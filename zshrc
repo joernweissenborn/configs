@@ -57,7 +57,7 @@ export GOPATH=/home/$USER/programming/golang/
 export PATH="$PATH:${GOPATH}bin"
 export PATH="$PATH:/home/$USER/programming/golang/bin"
 
-export PATH="$PATH:/opt/golang/bin"
+export PATH="$PATH:/usr/local/go/bin"
 
 export PATH="$PATH:/opt/dartlang/bin"
 

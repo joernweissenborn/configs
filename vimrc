@@ -114,7 +114,6 @@ colorscheme molokai
 let mapleader = ","
 set lazyredraw
 set cursorline
-set filetype indent on
 set wildmenu
 set visualbell
 
