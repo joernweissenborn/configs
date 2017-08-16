@@ -4,8 +4,9 @@ cd ~
 
 echo "Installing stuff"
 
-sudo dnf install vim git python3-ipython tmux zsh htop util-linux-user redhat-rpm-config python3-devel
-sudo pip3 install thefuck
+sudo dnf update -y
+sudo dnf install -y vim git python3-ipython tmux zsh htop util-linux-user redhat-rpm-config python3-devel
+sudo pip3 install -y thefuck
 
 echo "Doing Oh My zsh"
 
