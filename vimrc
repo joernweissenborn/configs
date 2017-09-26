@@ -143,8 +143,8 @@ vnoremap <leader>d "_d
 
 " move line up and down
 
-nnoremap <S-Up> ddkkp
-nnoremap <S-Down> ddp
+nnoremap <C-Up> ddkkp
+nnoremap <C-Down> ddp
 
 " replace currently selected text with default register
 " without yanking it
