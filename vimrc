@@ -87,6 +87,10 @@ Plugin 'jplaut/vim-arduino-ino'
 
 Plugin 'rust-lang/rust.vim'
 
+Plugin 'vim-scripts/vim-stylus'
+
+Plugin 'alvan/vim-closetag'
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -141,8 +145,8 @@ vnoremap <leader>d "_d
 
 " move line up and down
 
-nnoremap <S-Up> ddkkp
-nnoremap <S-Down> ddp
+nnoremap <C-Up> ddkkp
+nnoremap <C-Down> ddp
 
 " replace currently selected text with default register
 " without yanking it
@@ -358,3 +362,29 @@ au BufNewFile,BufRead *.py
 let python_highlight_all=1
 syntax on
 au FileType py map <C-f> :Autopep8<CR>
+
+" HTML
+
+" filenames like *.xml, *.html, *.xhtml, ...
+" Then after you press <kbd>&gt;</kbd> in these files, this plugin will try to close the current tag.
+"
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml'
+
+" filenames like *.xml, *.xhtml, ...
+" This will make the list of non closing tags self closing in the specified files.
+"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
+" integer value [0|1]
+" This will make the list of non closing tags case sensitive (e.g. `<Link>` will be closed while `<link>` won't.)
+"
+let g:closetag_emptyTags_caseSensitive = 1
+
+" Shortcut for closing tags, default is '>'
+"
+let g:closetag_shortcut = '>'
+
+" Add > at current position without closing the current tag, default is ''
+"
+let g:closetag_close_shortcut = '<leader>>'
+>>>>>>> 7e33fe9f5d09df92e4449bcf7dba8124d37bf5d8
