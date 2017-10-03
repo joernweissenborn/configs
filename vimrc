@@ -72,6 +72,8 @@ Plugin 'vim-scripts/indentpython.vim'
 
 Plugin 'nvie/vim-flake8'
 
+Plugin 'tell-k/vim-autopep8'
+
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
 Plugin 'airblade/vim-gitgutter'                 " Shows nice +/- for git chagnes in left pne
@@ -186,6 +188,7 @@ map <S-\> ,cs
 au FileType dart set expandtab
 au FileType dart set tabstop=2
 au FileType dart set shiftwidth=2
+au FileType dart map <C-f> :DartFmt<CR>
 au FileType yaml set expandtab
 au FileType yaml set tabstop=2
 au FileType yaml set shiftwidth=2
@@ -354,3 +357,4 @@ au BufNewFile,BufRead *.py
 
 let python_highlight_all=1
 syntax on
+au FileType py map <C-f> :Autopep8<CR>
