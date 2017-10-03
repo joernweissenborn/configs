@@ -89,6 +89,8 @@ Plugin 'vim-scripts/vim-stylus'
 
 Plugin 'alvan/vim-closetag'
 
+Plugin 'KabbAmine/gulp-vim'
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -120,6 +122,7 @@ set lazyredraw
 set cursorline
 set wildmenu
 set visualbell
+set term=xterm-256color
 
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
@@ -143,8 +146,8 @@ vnoremap <leader>d "_d
 
 " move line up and down
 
-nnoremap <C-Up> ddkkp
-nnoremap <C-Down> ddp
+nnoremap <S-Up> ddkkp
+nnoremap <S-Down> ddp
 
 " replace currently selected text with default register
 " without yanking it
@@ -360,6 +363,7 @@ let python_highlight_all=1
 syntax on
 
 " HTML
+autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
 " filenames like *.xml, *.html, *.xhtml, ...
 " Then after you press <kbd>&gt;</kbd> in these files, this plugin will try to close the current tag.
@@ -383,3 +387,7 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 "
 let g:closetag_close_shortcut = '<leader>>'
+
+"styl
+autocmd Filetype stylus setlocal ts=2 sts=2 sw=2
+autocmd Filetype stylus set expandtab
