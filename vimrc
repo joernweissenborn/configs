@@ -387,4 +387,3 @@ let g:closetag_shortcut = '>'
 " Add > at current position without closing the current tag, default is ''
 "
 let g:closetag_close_shortcut = '<leader>>'
->>>>>>> 7e33fe9f5d09df92e4449bcf7dba8124d37bf5d8
