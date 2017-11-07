@@ -54,6 +54,11 @@ eval $(thefuck --alias)
 
 # User configuration
 
+alias zreload=source ~/.zshrc
+
+# For Vim
+alias vimclip=xclip -sel clip < ~/.vimbuffer
+
 # Golang
 export GOPATH=/home/$USER/programming/golang/
 export PATH="$PATH:${GOPATH}bin"

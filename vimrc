@@ -41,6 +41,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'jiangmiao/auto-pairs'
 
 Plugin 'scrooloose/syntastic'
+" Plugin 'w0rp/ale'
 
 Plugin 'bling/vim-airline'                      " Nicer statusline
 
@@ -65,6 +66,8 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'dhruvasagar/vim-buffer-history'
 
 Plugin 'petRUShka/vim-opencl'
+
+Plugin 'tpope/vim-repeat'
 
 " Python
 
@@ -97,7 +100,15 @@ call vundle#end()            " required
 
 filetype plugin indent on    " required
 
+" ALE
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:ale_open_list = 1
+" let g:ale_set_quickfix = 1
+
+
 " Putty Colors
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 if &term =~ "xterm"
   " 256 colors
@@ -115,6 +126,8 @@ if &term =~ "xterm"
 endif
 
 " UI
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 set number
 set mouse=a
@@ -157,7 +170,19 @@ nnoremap <S-Down> ddp
 vnoremap <leader>p "_dP"
 nnoremap <leader>vp viw"_dP"
 
-" settings for gvim
+" copy to buffer
+vmap <leader>fy :w! ~/.vimbuffer<CR>
+nmap <leader>fy :.w! ~/.vimbuffer<CR>
+" paste from buffer
+nnoremap <leader>fp :r ~/.vimbuffer<CR>
+
+" new line in insert
+inoremap <C-o> <ESC>o
+inoremap <C-O> <ESC>O
+
+" SETTINGS FOR GVIM
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 if has("gui_running")
   if has("gui_gtk2")
@@ -172,11 +197,14 @@ endif
 let g:indent_guides_enable_on_vim_startup = 1
 
 " CtrlP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
-" NerdCommenter
+" NERDCOMMENTER
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
@@ -191,6 +219,8 @@ map <C-\> ,c<Space>
 map <S-\> ,cs
 
 " Dartlang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 au FileType dart set expandtab
 au FileType dart set tabstop=2
@@ -201,6 +231,8 @@ au FileType yaml set tabstop=2
 au FileType yaml set shiftwidth=2
 
 " Tagbar
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 nmap <F8> :TagbarToggle<CR>
 
@@ -233,11 +265,15 @@ let g:tagbar_type_go = {
     \ }
 
 " AirLine
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 let g:airline#extensions#tabline#enabled = 1            " show TabLine by default
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'"
 
 " Nerdtree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 nmap <F7> :NERDTreeToggle<CR>
 
 let NERDTreeShowHidden=1
@@ -253,6 +289,8 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 
 " neocomplete
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
 
@@ -285,6 +323,8 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " autowrite
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "
 let g:auto_save_in_insert_mode = 0  " do not save while in insert mode
 
@@ -293,6 +333,8 @@ let g:auto_save = 1
 
 
 "Neosnippets
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 "
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -310,6 +352,8 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 
 " syntastic
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
@@ -324,12 +368,16 @@ let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " better whitespace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 "map <C-w> :StripWhitespace<CR>
 map <leader>w :StripWhitespace<CR>
 
 
 " golang
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 au FileType go nmap <leader>r <Plug>(go-run)
 au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
@@ -351,6 +399,8 @@ let g:go_fmt_autosave = 0
 let g:go_list_type = "quickfix"
 
 " python
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 
 " PEP 8
 au BufNewFile,BufRead *.py
@@ -367,6 +417,8 @@ syntax on
 au FileType py map <C-f> :Autopep8<CR>
 
 " HTML
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 autocmd Filetype html setlocal ts=2 sts=2 sw=2
 
 " filenames like *.xml, *.html, *.xhtml, ...
@@ -393,5 +445,7 @@ let g:closetag_shortcut = '>'
 let g:closetag_close_shortcut = '<leader>>'
 
 "styl
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 autocmd Filetype stylus setlocal ts=2 sts=2 sw=2
 autocmd Filetype stylus set expandtab
