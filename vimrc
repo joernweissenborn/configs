@@ -34,6 +34,8 @@ Plugin 'majutsushi/tagbar'
 
 Plugin 'Shougo/neocomplete.vim'
 
+Plugin 'Shougo/vimproc.vim'
+
 Plugin 'vim-scripts/vim-auto-save'
 
 Plugin 'dart-lang/dart-vim-plugin'
@@ -95,6 +97,10 @@ Plugin 'vim-scripts/vim-stylus'
 Plugin 'alvan/vim-closetag'
 
 Plugin 'KabbAmine/gulp-vim'
+
+Plugin 'leafgarland/typescript-vim'
+Plugin 'Quramy/vim-js-pretty-template'
+Plugin 'Quramy/tsuquyomi'
 
 call vundle#end()            " required
 
@@ -449,3 +455,28 @@ let g:closetag_close_shortcut = '<leader>>'
 
 autocmd Filetype stylus setlocal ts=2 sts=2 sw=2
 autocmd Filetype stylus set expandtab
+
+" typescript
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
+let g:syntastic_typescript_checkers = ['tsuquyomi']
+
+" angular
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" vimjspretty
+autocmd FileType typescript JsPreTmpl html
+autocmd FileType typescript syn clear foldBraces
+autocmd Filetype typescript setlocal ts=2 sts=2 sw=2
+autocmd Filetype typescript set expandtab
+
+" CSS
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+
+autocmd Filetype css setlocal ts=2 sts=2 sw=2
+autocmd Filetype css set expandtab
