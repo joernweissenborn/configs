@@ -69,6 +69,10 @@ export PATH="$PATH:/usr/local/go/bin"
 
 export PATH="$PATH:/opt/dartlang/bin"
 
+# Webdev
+
+export PATH="$PATH:/home/joern/.yarn/bin"
+
 source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 
