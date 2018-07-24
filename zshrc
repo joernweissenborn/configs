@@ -69,6 +69,9 @@ export PATH="$PATH:/usr/local/go/bin"
 
 export PATH="$PATH:/opt/dartlang/bin"
 
+# Conda
+export PATH=/home/joern/anaconda3/bin:$PATH
+
 source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 
