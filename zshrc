@@ -72,6 +72,10 @@ export PATH="$PATH:/opt/dartlang/bin"
 # Conda
 export PATH=/home/joern/anaconda3/bin:$PATH
 
+# Webdev
+
+export PATH="$PATH:/home/joern/.yarn/bin"
+
 source $HOME/.cargo/env
 # export MANPATH="/usr/local/man:$MANPATH"
 
