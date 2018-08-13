@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+# ZSH_THEME="robbyrussell"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,19 +46,23 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git chucknorris dnf fancy-ctrl-z thefuck history-substring-search)
-
-alias wttr="curl wttr.in"
+plugins=(
+	git
+	dnf
+	fancy-ctrl-z
+	thefuck
+	history-substring-search
+	)
 
 source $ZSH/oh-my-zsh.sh
 eval $(thefuck --alias)
 
 # User configuration
 
-alias zreload=source ~/.zshrc
+alias zreload="source ~/.zshrc"
 
 # For Vim
-alias vimclip=xclip -sel clip < ~/.vimbuffer
+alias vimclip="xclip -sel clip < ~/.vimbuffer"
 
 # Golang
 export GOPATH=/home/$USER/programming/golang/
@@ -73,20 +78,17 @@ export PATH="$PATH:/opt/dartlang/bin"
 export PATH=/home/joern/anaconda3/bin:$PATH
 
 # Webdev
-
 export PATH="$PATH:/home/joern/.yarn/bin"
 
+# Cargo
 source $HOME/.cargo/env
-# export MANPATH="/usr/local/man:$MANPATH"
 
 # tmux
-
 export TMUXP_CONFIGDIR=$HOME/configs/tmuxp
 export DISABLE_AUTO_TITLE='true'
 alias ta='tmux a -t'
 
 # ssh key unlock
-
 alias unlockmykeys='eval "$(ssh-agent)" && ssh-add'
 
 # # Preferred editor for local and remote sessions
@@ -98,3 +100,12 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
  export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+ # Powerlevel9k
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(command_execution_time ssh context dir rbenv vcs anaconda)
+
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history battery time)
+
+POWERLEVEL9K_DIR_SHOW_WRITABLE=true
