@@ -104,8 +104,8 @@ export ARCHFLAGS="-arch x86_64"
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(command_execution_time ssh context dir rbenv vcs anaconda)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(history status command_execution_time ssh context dir)
 
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history battery time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(rbenv vcs anaconda root_indicator background_jobs battery time)
 
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
