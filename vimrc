@@ -28,7 +28,8 @@ Plugin 'fatih/vim-go'
 
 Plugin 'majutsushi/tagbar'
 
-Plugin 'Shougo/neocomplete.vim'
+" Plugin 'Shougo/neocomplete.vim'
+Plugin 'maralla/completor.vim'
 
 Plugin 'Shougo/vimproc.vim'
 
@@ -41,7 +42,8 @@ Plugin 'jiangmiao/auto-pairs'
 " Plugin 'scrooloose/syntastic'
 Plugin 'w0rp/ale'
 
-Plugin 'bling/vim-airline'                      " Nicer statusline
+Plugin 'vim-airline/vim-airline'                      " Nicer statusline
+Plugin 'vim-airline/vim-airline-themes'                      " Nicer statusline
 
 Plugin 'ntpeters/vim-better-whitespace'         " better whitespace managent
 
@@ -69,7 +71,7 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tell-k/vim-autopep8'
-" Plugin 'heavenshell/vim-pydocstring'
+Plugin 'heavenshell/vim-pydocstring'
 
 
 " VCS
@@ -202,6 +204,12 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+" Completor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>\<cr>" : "\<cr>"
+
 " NERDCOMMENTER
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDSpaceDelims = 1
@@ -266,9 +274,16 @@ let g:tagbar_type_go = {
 " AirLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let g:airline#extensions#tabline#enabled = 1            " show TabLine by default
+" show TabLine by default
+let g:airline#extensions#tabline#enabled = 1            
+
+" Automatically displays all buffers when there's only one tab open.``
+let g:airline#extensions#tabline#enabled = 1
+
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'"
+
+
 
 " Nerdtree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -291,16 +306,16 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+" let g:acp_enableAtStartup = 0
 
 
-let g:neocomlete#enable_at_startup = 1
-autocmd VimEnter * NeoCompleteEnable " Enable NeoComplete at startup
+" let g:neocomlete#enable_at_startup = 1
+" autocmd VimEnter * NeoCompleteEnable " Enable NeoComplete at startup
 
 " Use smartcase.
-let g:neocomplete#enable_smart_case = 1
+" let g:neocomplete#enable_smart_case = 1
 " Set minimum syntax keyword length.
-let g:neocomplete#sources#syntax#min_keyword_length = 3
+" let g:neocomplete#sources#syntax#min_keyword_length = 3
 
 " Plugin key-mappings.
 " inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -308,18 +323,18 @@ let g:neocomplete#sources#syntax#min_keyword_length = 3
 "
 " Recommended key-mappings.
 " <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
+" inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+" function! s:my_cr_function()
   "return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
   " For no inserting <CR> key.
-  return pumvisible() ? "\<C-y>" : "\<CR>"
-endfunction
+  " return pumvisible() ? "\<C-y>" : "\<CR>"
+" endfunction
 " <TAB>: completion.
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
 
 " autowrite
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -354,23 +369,20 @@ let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+"
+" let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 "let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
 
 " better whitespace
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-
-"map <C-w> :StripWhitespace<CR>
 map <leader>w :StripWhitespace<CR>
 
 
@@ -418,9 +430,8 @@ au FileType py map <C-f> :Autopep8<CR>
 " Pydocstring depends on softtabstop. You need to set like set softtabstop=4.
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
+nmap <silent> <C-_> <Plug>(pydocstring)
 let g:pydocstring_templates_dir = '/home/joern/configs/programming/python/templates/doc/'
-" let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
-
 
 
 " HTML
@@ -464,7 +475,7 @@ let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
-let g:syntastic_typescript_checkers = ['tsuquyomi']
+" let g:syntastic_typescript_checkers = ['tsuquyomi']
 
 " angular
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
