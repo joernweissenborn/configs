@@ -42,8 +42,8 @@ Plugin 'dart-lang/dart-vim-plugin'
 
 Plugin 'jiangmiao/auto-pairs'
 
-Plugin 'scrooloose/syntastic'
-" Plugin 'w0rp/ale'
+" Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'
 
 Plugin 'bling/vim-airline'                      " Nicer statusline
 
@@ -61,7 +61,7 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
-Plugin 'terryma/vim-multiple-cursors'
+" Plugin 'terryma/vim-multiple-cursors'
 
 Plugin 'flazz/vim-colorschemes'
 
@@ -75,7 +75,9 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'vim-scripts/indentpython.vim'
 
-Plugin 'nvie/vim-flake8'
+" Plugin 'nvie/vim-flake8'
+
+" Plugin 'heavenshell/vim-pydocstring'
 
 Plugin 'tell-k/vim-autopep8'
 
@@ -108,8 +110,8 @@ filetype plugin indent on    " required
 
 " ALE
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" let g:ale_open_list = 1
-" let g:ale_set_quickfix = 1
+let g:ale_open_list = 1
+let g:ale_set_quickfix = 1
 
 
 " Putty Colors
@@ -421,6 +423,14 @@ au BufNewFile,BufRead *.py
 let python_highlight_all=1
 syntax on
 au FileType py map <C-f> :Autopep8<CR>
+
+" Pydocstring depends on softtabstop. You need to set like set softtabstop=4.
+autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
+
+let g:pydocstring_templates_dir = '/home/joern/configs/programming/python/templates/doc/'
+" let g:syntastic_python_pyflakes_exe = 'python3 -m pyflakes'
+
+
 
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
