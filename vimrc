@@ -15,10 +15,6 @@ elseif has('win32')
 
 endif
 
-" Colors for Putty
-
-
-
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
@@ -61,8 +57,6 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Plugin 'terryma/vim-multiple-cursors'
-
 Plugin 'flazz/vim-colorschemes'
 
 Plugin 'dhruvasagar/vim-buffer-history'
@@ -74,21 +68,18 @@ Plugin 'tpope/vim-repeat'
 " Python
 
 Plugin 'vim-scripts/indentpython.vim'
-
-" Plugin 'nvie/vim-flake8'
-
+Plugin 'tell-k/vim-autopep8'
 " Plugin 'heavenshell/vim-pydocstring'
 
-Plugin 'tell-k/vim-autopep8'
 
 " VCS
 Plugin 'tpope/vim-fugitive'                     " GIT Bindings for VIM
 Plugin 'airblade/vim-gitgutter'                 " Shows nice +/- for git chagnes in left pne
 
 " Snippets
-Plugin 'Shougo/neosnippet'
-Plugin 'Shougo/neosnippet-snippets'
-Plugin 'honza/vim-snippets'
+" Plugin 'Shougo/neosnippet'
+" Plugin 'Shougo/neosnippet-snippets'
+" Plugin 'honza/vim-snippets'
 
 Plugin 'jplaut/vim-arduino-ino'
 
