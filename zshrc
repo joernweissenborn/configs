@@ -1,3 +1,4 @@
+export TERM="xterm-256color"
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -109,3 +110,9 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(history status command_execution_time ssh con
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(rbenv vcs anaconda root_indicator background_jobs battery time)
 
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
+
+# load zgen
+source "${HOME}/.zgen/zgen.zsh"
+
+zgen load djui/alias-tips 
+

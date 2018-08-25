@@ -14,3 +14,8 @@ echo "creating symlink"
 
 rm .zshrc
 ln -s configs/zshrc .zshrc
+
+# Clone the zgen repository
+
+git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
+
