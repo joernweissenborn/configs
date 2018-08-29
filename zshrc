@@ -61,6 +61,9 @@ eval $(thefuck --alias)
 # User configuration
 
 alias zreload="source ~/.zshrc"
+alias edit_vim="vim ~/.vimrc"
+alias edit_zsh="vim ~/.zshrc"
+alias edit_tmux="vim ~/.tmux"
 
 # For Vim
 alias vimclip="xclip -sel clip < ~/.vimbuffer"
