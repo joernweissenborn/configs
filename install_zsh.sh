@@ -19,3 +19,6 @@ ln -s configs/zshrc .zshrc
 
 git clone https://github.com/tarjoilija/zgen.git "${HOME}/.zgen"
 
+# autosuggestions
+
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions

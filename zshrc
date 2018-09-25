@@ -48,11 +48,13 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(
-	git
 	dnf
 	fancy-ctrl-z
-	thefuck
+	git
 	history-substring-search
+	thefuck
+	sudo
+	zsh-autosuggestions
 	)
 
 source $ZSH/oh-my-zsh.sh
