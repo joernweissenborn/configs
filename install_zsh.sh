@@ -2,7 +2,7 @@
 
 cd ~
 
-sudo dnf install -y zsh
+sudo dnf install -y zsh powerline-fonts
 
 echo "Doing Oh My zsh"
 
