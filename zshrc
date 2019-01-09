@@ -52,8 +52,10 @@ plugins=(
 	fancy-ctrl-z
 	git
 	history-substring-search
-	thefuck
+	pip
+	python
 	sudo
+	thefuck
 	zsh-autosuggestions
 	)
 

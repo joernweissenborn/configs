@@ -160,7 +160,11 @@ imap <C-d> <ESC>yypi
 
 " select all
 
-nmap <C-a> ggVG
+" nmap <C-a> ggVG
+
+" no auto line break
+
+set formatoptions-=tc
 
 " delete without yanking
 nnoremap <leader>d "_d
