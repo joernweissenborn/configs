@@ -60,6 +60,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 
 Plugin 'flazz/vim-colorschemes'
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'dhruvasagar/vim-buffer-history'
 
@@ -133,12 +134,14 @@ endif
 
 " UI
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+syntax enable
+set background=dark
+colorscheme solarized
 
 
 set tw=0 " No Auto insert newline
 set number
 set mouse=a
-colorscheme molokai
 let mapleader = ","
 set lazyredraw
 set cursorline

@@ -68,6 +68,7 @@ alias zreload="source ~/.zshrc"
 alias edit_vim="vim ~/.vimrc"
 alias edit_zsh="vim ~/.zshrc"
 alias edit_tmux="vim ~/.tmux"
+export PATH="$PATH:/home/joern/.local/bin"
 
 # For Vim
 alias vimclip="xclip -sel clip < ~/.vimbuffer"
@@ -81,6 +82,10 @@ export PATH="$PATH:/usr/local/go/bin"
 # Dart
 
 export PATH="$PATH:/opt/dartlang/bin"
+
+# Python
+alias python='/usr/bin/python3'
+alias pip='/usr/bin/pip3'
 
 # Conda
 export PATH=/home/joern/anaconda3/bin:$PATH
