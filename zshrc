@@ -126,5 +126,4 @@ POWERLEVEL9K_DIR_SHOW_WRITABLE=true
 # load zgen
 source "${HOME}/.zgen/zgen.zsh"
 
-zgen load djui/alias-tips 
-
+zgen load djui/alias-tips

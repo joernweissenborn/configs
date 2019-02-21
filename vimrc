@@ -110,7 +110,7 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
   \ }
-
+let g:ale_completion_enabled = 1
 
 
 " Putty Colors
@@ -137,7 +137,7 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
-
+call togglebg#map("<F4>")
 
 set tw=0 " No Auto insert newline
 set number
@@ -151,7 +151,7 @@ set term=xterm-256color
 
 
 nnoremap <F5> :buffers<CR>:buffer<Space>
-nnoremap <F6> :SyntasticToggleMode<CR>
+nnoremap <F6> :ALEToggle<CR>
 
 nnoremap <Tab> :BufferHistoryBack<CR>
 nnoremap <S-Tab> :BufferHistoryForward<CR>
@@ -200,7 +200,7 @@ inoremap <C-O> <ESC>O
 
 if has("gui_running")
   if has("gui_gtk2")
-    set guifont=Inconsolata\ 12
+    set guifont=Fira Code\ 11
   elseif has("gui_macvim")
     set guifont=Menlo\ Regular:h14
   elseif has("gui_win32")
