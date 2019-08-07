@@ -98,6 +98,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'Quramy/tsuquyomi'
 
+Plugin 'peterhoeg/vim-qml'
+
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
