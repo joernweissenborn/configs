@@ -40,7 +40,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'jiangmiao/auto-pairs'
 
 " Plugin 'scrooloose/syntastic'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 Plugin 'vim-airline/vim-airline'                      " Nicer statusline
 Plugin 'vim-airline/vim-airline-themes'                      " Nicer statusline
@@ -112,9 +112,10 @@ let g:ale_set_quickfix = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
+  \ 'cpp': ['clangtidy'] ,
   \ }
 let g:ale_completion_enabled = 1
-
+let g:ale_cpp_clangtidy_options = 'p ./build/'
 
 " Putty Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
