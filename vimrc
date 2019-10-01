@@ -506,6 +506,11 @@ autocmd Filetype typescript set expandtab
 " CSS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype css set expandtab
+
+" QML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+autocmd Filetype qml setlocal ts=4 sts=4 sw=4
+autocmd Filetype qml set expandtab
