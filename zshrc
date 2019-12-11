@@ -113,6 +113,10 @@ export ARCHFLAGS="-arch x86_64"
 # ssh
  export SSH_KEY_PATH="~/.ssh/dsa_id"
 
+# cheat
+
+export CHEAT_USER_DIR=~/configs/cheatsheets
+
  # Powerlevel9k
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true

@@ -1,0 +1,2 @@
+Add an Existing User Account to a Group
+usermod -a -G examplegroup exampleusername
