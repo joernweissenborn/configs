@@ -1,0 +1,7 @@
+
+
+cheatpaths:
+  - name: personal
+    path: ~/configs/cheatsheets/
+    tags: [ personal ]
+    readonly: false                   # new sheets may be written here

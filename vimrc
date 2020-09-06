@@ -40,7 +40,7 @@ Plugin 'dart-lang/dart-vim-plugin'
 Plugin 'jiangmiao/auto-pairs'
 
 " Plugin 'scrooloose/syntastic'
-Plugin 'w0rp/ale'
+Plugin 'dense-analysis/ale'
 
 Plugin 'vim-airline/vim-airline'                      " Nicer statusline
 Plugin 'vim-airline/vim-airline-themes'                      " Nicer statusline
@@ -99,6 +99,9 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'Quramy/vim-js-pretty-template'
 Plugin 'Quramy/tsuquyomi'
 
+Plugin 'peterhoeg/vim-qml'
+
+
 call vundle#end()            " required
 
 filetype plugin indent on    " required
@@ -110,6 +113,7 @@ let g:ale_set_quickfix = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
+  \ 'cpp': ['clangtidy'] ,
   \ }
 let b:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -117,7 +121,7 @@ let b:ale_fixers = {
   \ }
 
 let g:ale_completion_enabled = 1
-
+let g:ale_cpp_clangtidy_options = 'p ./build/'
 
 " Putty Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -508,6 +512,11 @@ autocmd Filetype typescript set expandtab
 " CSS
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 autocmd Filetype css setlocal ts=2 sts=2 sw=2
 autocmd Filetype css set expandtab
+
+" QML
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+autocmd Filetype qml setlocal ts=4 sts=4 sw=4
+autocmd Filetype qml set expandtab
