@@ -72,6 +72,7 @@ Plugin 'tpope/vim-repeat'
 
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tell-k/vim-autopep8'
+Plugin 'psf/black'
 Plugin 'heavenshell/vim-pydocstring'
 
 
@@ -110,6 +111,11 @@ let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
   \ }
+let b:ale_fixers = {
+  \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+  \ 'python': ['black']
+  \ }
+
 let g:ale_completion_enabled = 1
 
 
@@ -438,7 +444,7 @@ au BufNewFile,BufRead *.py
 
 let python_highlight_all=1
 syntax on
-au FileType py map <C-f> :Autopep8<CR>
+au FileType python map <C-f> :Black<CR>
 
 " Pydocstring depends on softtabstop. You need to set like set softtabstop=4.
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
