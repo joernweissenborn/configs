@@ -55,7 +55,9 @@ plugins=(
 	pip
 	python
 	sudo
+	systemd
 	thefuck
+	virtualenv
 	zsh-autosuggestions
 	)
 
