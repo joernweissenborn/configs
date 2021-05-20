@@ -70,6 +70,7 @@ Plugin 'tpope/vim-repeat'
 
 " Python
 
+Plugin 'vim-scripts/python_match.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'psf/black'
