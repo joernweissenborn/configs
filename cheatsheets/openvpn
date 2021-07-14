@@ -1,0 +1,3 @@
+# WARNING: file 'ta.key' is group or others accessible
+
+chmod 600 FILE

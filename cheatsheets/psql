@@ -1,0 +1,8 @@
+# load dump
+
+psql --log-file db.log --file db-dump-from-db-C.sql.txt
+
+
+# drop toc
+psql --log-file db.log -c 'DROP DATABASE "toc";'
+
