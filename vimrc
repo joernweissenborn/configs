@@ -51,6 +51,8 @@ Plugin 'tpope/vim-sensible'                     " Sensible defaults
 
 Plugin 'nathanaelkane/vim-indent-guides'
 
+Plugin 'ilyachur/cmake4vim'
+
 Plugin 'mrtazz/DoxygenToolkit.vim'
 
 Plugin 'vim-scripts/SearchComplete'
@@ -114,15 +116,17 @@ let g:ale_set_quickfix = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
-  \ 'cpp': ['clangtidy'] ,
   \ }
 let b:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
   \ 'python': ['black']
   \ }
 
+  " \ 'cpp': ['clangtidy'] ,
 let g:ale_completion_enabled = 1
 let g:ale_cpp_clangtidy_options = 'p ./build/'
+" let g:ale_cpp_clangtidy_checks = ['*']
+
 
 " Putty Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -433,6 +437,12 @@ let g:go_fmt_command = "goimports"
 let g:go_fmt_autosave = 0
 let g:go_list_type = "quickfix"
 
+" CPP
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+autocmd Filetype cpp setlocal ts=2 sts=2 sw=2
+autocmd Filetype h setlocal ts=2 sts=2 sw=2
+au FileType cpp map <C-f> :silent ! clang-format --style=file -i %<CR>:redraw!<CR>
+
 " python
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -521,3 +531,4 @@ autocmd Filetype css set expandtab
 
 autocmd Filetype qml setlocal ts=4 sts=4 sw=4
 autocmd Filetype qml set expandtab
+au FileType qml map <C-f> :silent ! qmlformat -i %<CR>:redraw!<CR>
