@@ -74,7 +74,7 @@ Plugin 'vim-scripts/python_match.vim'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'tell-k/vim-autopep8'
 Plugin 'psf/black'
-Plugin 'heavenshell/vim-pydocstring'
+Plugin 'pixelneo/vim-python-docstring'
 
 
 " VCS
@@ -454,9 +454,9 @@ au FileType python map <C-f> :Black<CR>
 " Pydocstring depends on softtabstop. You need to set like set softtabstop=4.
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab
 
-nmap <silent> <C-_> <Plug>(pydocstring)
-let g:pydocstring_templates_dir = '/home/joern/configs/programming/python/templates/doc/'
-
+" nmap <silent> <C-_> <Plug>(pydocstring)
+" let g:pydocstring_templates_dir = '/home/joern/configs/programming/python/templates/doc/'
+let g:python_style = 'numpy'
 
 " HTML
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
