@@ -68,6 +68,7 @@ eval $(thefuck --alias)
 
 alias zreload="source ~/.zshrc"
 alias edit_vim="vim ~/.vimrc"
+alias update_vim_plugins="vim -c PluginUpdate -c quitall && vim -c PluginClean -c quitall"
 alias edit_zsh="vim ~/.zshrc"
 alias edit_tmux="vim ~/.tmux"
 export PATH="$PATH:/home/joern/.local/bin"
