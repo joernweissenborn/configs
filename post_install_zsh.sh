@@ -1,13 +1,16 @@
 #!/bin/sh
 
-
-git clone https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+#p10k
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
 
 
 echo "creating symlink"
 
-rm $HOME/.zshrc
+rm -f $HOME/.zshrc
 ln -s $HOME/configs/zshrc $HOME/.zshrc
+
+rm -f $HOME/.p10k.zsh
+ln -s $HOME/configs/p10k.zsh $HOME/.p10k.zsh
 
 # Clone the zgen repository
 
