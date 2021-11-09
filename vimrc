@@ -116,13 +116,14 @@ let g:ale_set_quickfix = 1
 let g:ale_lint_on_text_changed = 'never'
 let g:ale_linters = {
   \ 'python': ['flake8'] ,
+  \ 'cpp': ['clangtidy'] ,
   \ }
 let b:ale_fixers = {
   \ '*': ['remove_trailing_lines', 'trim_whitespace'],
-  \ 'python': ['black']
+  \ 'python': ['black'] ,
+  \ 'cpp': ['clangtidy'] ,
   \ }
 
-  " \ 'cpp': ['clangtidy'] ,
 let g:ale_completion_enabled = 1
 let g:ale_cpp_clangtidy_options = 'p ./build/'
 " let g:ale_cpp_clangtidy_checks = ['*']
